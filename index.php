@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>PHP Sessions e Cookies</title>
+    <title>Simulação de um Banco de Dados!</title>
 </head>
 <body>
     <h1>Gerenciador de Dados</h1>
