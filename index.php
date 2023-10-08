@@ -46,6 +46,9 @@ function excluirDados($indice) {
     }
 }
 
+
+
+
 // processar as ações do usuário
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($_POST['acao'] === 'inserir') {
@@ -69,6 +72,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         excluirDados($indice);
     }
 }
+
+
 ?>
 
 <!DOCTYPE html>
