@@ -1,18 +1,18 @@
 <?php
-// Iniciar a sessão
+
 session_start();
 
-// Verificar se o array de dados já existe na sessão
+// verificar se o array de dados já existe na sessão
 if (!isset($_SESSION['banco_de_dados'])) {
     $_SESSION['banco_de_dados'] = array();
 }
 
-// Função para inserir dados no banco de dados
+// inserir dados no banco de dados
 function inserirDados($dados) {
     $_SESSION['banco_de_dados'][] = $dados;
 }
 
-// Função para pesquisar dados no banco de dados
+// pesquisar dados no banco de dados
 function pesquisarDados($chave) {
     $resultados = array();
 
@@ -25,7 +25,7 @@ function pesquisarDados($chave) {
     return $resultados;
 }
 
-// Função para alterar dados no banco de dados
+// função para alterar dados no banco de dados
 function alterarDados($indice, $novosDados) {
     if (isset($_SESSION['banco_de_dados'][$indice])) {
         $_SESSION['banco_de_dados'][$indice] = $novosDados;
@@ -35,7 +35,7 @@ function alterarDados($indice, $novosDados) {
     }
 }
 
-// Função para excluir dados do banco de dados
+// excluir dados do banco de dados
 function excluirDados($indice) {
     if (isset($_SESSION['banco_de_dados'][$indice])) {
         unset($_SESSION['banco_de_dados'][$indice]);
@@ -46,7 +46,7 @@ function excluirDados($indice) {
     }
 }
 
-// Processar as ações do usuário
+// processar as ações do usuário
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($_POST['acao'] === 'inserir') {
         $novoRegistro = array(
