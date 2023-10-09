@@ -2,7 +2,7 @@
 
 session_start();
 
-// Verificar se o array de dados já existe na sessão
+// Verificar se o array de dados já existe 
 if (!isset($_SESSION['banco_de_dados'])) {
     $_SESSION['banco_de_dados'] = array();
 }
@@ -51,13 +51,13 @@ function excluirInformacoes($indice) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($_POST['acao'] === 'inserir') {
         $novoRegistro = array(
-            'nome' => $_POST['nome'],
+        'nome' => $_POST['nome'],
             'email' => $_POST['email']
         );
         inserirDados($novoRegistro);
     } elseif ($_POST['acao'] === 'pesquisar') {
         $termoPesquisa = $_POST['termo_pesquisa'];
-        $resultados = pesquisarDados($termoPesquisa);
+     $resultados = pesquisarDados($termoPesquisa);
     } elseif ($_POST['acao'] === 'alterar') {
         $indice = $_POST['indice'];
         $novosDados = array(
@@ -66,8 +66,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         );
         alterarDados($indice, $novosDados);
     } elseif ($_POST['acao'] === 'excluir') {
-        $indice = $_POST['indice'];
-        excluirDados($indice);
+    $indice = $_POST['indice'];
+    excluirDados($indice);
     }
 }
 
@@ -105,7 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 Nome: <?php echo $registro['nome']; ?><br>
                 Email: <?php echo $registro['email']; ?><br>
                 <form method="POST">
-                    Novo Nome: <input type="text" name="novo_nome"><br>
+                 Novo Nome: <input type="text" name="novo_nome"><br>
                     Novo Email: <input type="text" name="novo_email"><br>
                     <input type="hidden" name="indice" value="<?php echo $indice; ?>">
                     <input type="hidden" name="acao" value="alterar">
