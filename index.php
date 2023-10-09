@@ -2,18 +2,18 @@
 
 session_start();
 
-// verificar se o array de dados já existe na sessão
+// Verificar se o array de dados já existe na sessão
 if (!isset($_SESSION['banco_de_dados'])) {
     $_SESSION['banco_de_dados'] = array();
 }
 
-// inserir dados no banco de dados
-function inserirDados($dados) {
+// Inserir informações no banco de dados
+function inserirInformacoes($dados) {
     $_SESSION['banco_de_dados'][] = $dados;
 }
 
-// pesquisar dados no banco de dados
-function pesquisarDados($chave) {
+// Pesquisar informações no banco de dados
+function pesquisarInformacoes($chave) {
     $resultados = array();
 
     foreach ($_SESSION['banco_de_dados'] as $registro) {
@@ -25,18 +25,18 @@ function pesquisarDados($chave) {
     return $resultados;
 }
 
-// função para alterar dados no banco de dados
-function alterarDados($indice, $novosDados) {
+// Função para atualizar informações no banco de dados
+function atualizarInformacoes($indice, $novasInformacoes) {
     if (isset($_SESSION['banco_de_dados'][$indice])) {
-        $_SESSION['banco_de_dados'][$indice] = $novosDados;
+        $_SESSION['banco_de_dados'][$indice] = $novasInformacoes;
         return true;
     } else {
         return false;
     }
 }
 
-// excluir dados do banco de dados
-function excluirDados($indice) {
+// Excluir informações do banco de dados
+function excluirInformacoes($indice) {
     if (isset($_SESSION['banco_de_dados'][$indice])) {
         unset($_SESSION['banco_de_dados'][$indice]);
         $_SESSION['banco_de_dados'] = array_values($_SESSION['banco_de_dados']);
@@ -45,8 +45,6 @@ function excluirDados($indice) {
         return false;
     }
 }
-
-
 
 
 // processar as ações do usuário
