@@ -1,5 +1,5 @@
 ## Um programa que utiliza "arrays associativos", simulando um banco de dados.
-Eu criei um software que simula um sistema de banco de dados usando arrays associativos. É uma forma conveniente de armazenar e gerenciar informações, assemelhando-se a um sistema de gestão de banco de dados real.
+Desenvolvi um sistema que simula um banco de dados usando arrays associativos. É uma forma conveniente de armazenar e gerenciar informações, assemelhando-se a um sistema de gestão de banco de dados real.
 
 ### Desenvolvido com:<br>
  <div>
